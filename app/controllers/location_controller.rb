@@ -1,6 +1,7 @@
 class LocationController < ApplicationController
 	def create
 		@location = locations.create(locations_params)
+		render json: { location: @location }, status: :ok
 	end
 
 	def index
@@ -10,11 +11,15 @@ class LocationController < ApplicationController
 	end
 
 	def edit
-
+		location = Location.find_by(location: params[:location])
+		location.update(locations_params)
+		render json: { location: @location }, status: :ok
 	end
 
 	def delete
-
+		@location = Location.find_by(params[:name])
+		@location.destroy
+		render json: { location: @location }, status: :ok
 	end
 
 	def locations_params
