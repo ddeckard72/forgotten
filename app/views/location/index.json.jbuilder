@@ -4,4 +4,5 @@ json.locations @locations do |location|
   json.city  location.city
   json.state location.state
   json.zipcode  location.zipcode
+  json.preview_image location.preview_image
 end

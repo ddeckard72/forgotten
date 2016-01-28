@@ -23,7 +23,7 @@ class LocationController < ApplicationController
 	end
 
 	def locations_params
-		allow = [:country, :city, :state, :zipcode, :include]
+		allow = [:country, :city, :state, :zipcode, :include, :preview_image]
 		params.require(:location).permit(allow)
 	end
 end
