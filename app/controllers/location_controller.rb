@@ -10,6 +10,10 @@ class LocationController < ApplicationController
 		render "index.json.jbuilder", status: :ok
 	end
 
+	def display
+		#returns an index in html bootstrap formatted through erb
+	end
+
 	def edit
 		location = Location.find_by(location: params[:location])
 		location.update(locations_params)
@@ -23,7 +27,7 @@ class LocationController < ApplicationController
 	end
 
 	def locations_params
-		allow = [:country, :city, :state, :zipcode, :include, :preview_image]
+		allow = [:country, :city, :state, :zipcode, :include, :preview_image, :tagline]
 		params.require(:location).permit(allow)
 	end
 end
