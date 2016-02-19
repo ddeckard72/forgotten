@@ -11,8 +11,10 @@ get "/image/search", to: "image#search"
 delete "/image", to: "image#delete"
 get "/image", to: "image#imagelist"
 #content
-
+post "/content", to: "content#create"
+get "/content", to: "content#html"
 #article
-
+post "/article", to: "article#create"
+get "/article", to: "article#html"
 
 end
