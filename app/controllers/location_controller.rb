@@ -27,6 +27,18 @@ class LocationController < ApplicationController
 		render json: { location: @location }, status: :ok
 	end
 
+	def get_countries
+
+	end
+
+	def get_states
+
+	end
+
+	def get_locations
+
+	end
+
 	def locations_params
 		allow = [:country, :city, :state, :zipcode, :include, :preview_image, :tagline]
 		params.require(:location).permit(allow)
