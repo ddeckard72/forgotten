@@ -39,6 +39,11 @@ class LocationController < ApplicationController
 
 	end
 
+	def addrecord
+		newrecord = Location.new
+		render :new
+	end
+
 	def locations_params
 		allow = [:country, :city, :state, :zipcode, :include, :preview_image, :tagline]
 		params.require(:location).permit(allow)

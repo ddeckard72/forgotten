@@ -1,0 +1,18 @@
+<h1>Add location</h1>
+
+<%= form_tag(locations_path) do %>
+	 <div class="location-field">
+        <%= label_tag "Name: " %>
+        <%= text_field_tag :location %>
+    </div>
+
+    <div class="location-field">
+        <%= label_tag "Continent: " %>
+        <%= text_field_tag :continent %>
+    </div>
+
+    <%= submit_tag "Add" %>
+    <p>
+	<%= link_to "Nevermind", locations_path %>
+	</p>
+<% end %>
