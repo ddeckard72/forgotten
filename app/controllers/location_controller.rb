@@ -32,7 +32,8 @@ class LocationController < ApplicationController
 	end
 
 	def get_states
-
+		@location = Location.find_by(state: params[:state])
+		render "index.json.jbuilder", status: :ok
 	end
 
 	def get_locations
