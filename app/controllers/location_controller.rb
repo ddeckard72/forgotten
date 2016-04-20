@@ -4,13 +4,13 @@ class LocationController < ApplicationController
 		render json: { location: @location }, status: :ok
 	end
 
+	#formatting index page
 	def index
-		#formatting index page		
 		@locations = Location.where(include: true).order("location")
 	end
 
+	#returns all locations tagged to be included in the contents
 	def locations
-		#returns all locations tagged to be included in the contents
 		@locations = Location.where(include: true).order("location")
 		render "index.json.jbuilder", status: :ok
 	end
@@ -31,8 +31,14 @@ class LocationController < ApplicationController
 
 	end
 
+	# Return a list of states
 	def get_states
-		@location = Location.find_by(state: params[:state])
+
+	end
+
+	# Return all locations for a given state
+	def get_by_state
+		@location = Location.find_by(state: params[:state]).order("location")
 		render "index.json.jbuilder", status: :ok
 	end
 
